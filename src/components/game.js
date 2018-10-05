@@ -27,11 +27,10 @@ export default class Game extends Component {
 
 
    handleSubmit(e) {
-
     let message;
     if(this.state.currentGuess < this.state.gameNum) { message = this.state.feedback[1] }
     else if(this.state.currentGuess > this.state.gameNum) { message = this.state.feedback[2] }
-    else if(this.state.currentGuess === this.state.gameNum) { message = this.state.feedback[3] };
+    else if(this.state.currentGuess == this.state.gameNum) { message = this.state.feedback[3] };
 
     let guessArr = [...this.state.guesses, this.state.currentGuess];
     console.log(message);
@@ -41,10 +40,10 @@ export default class Game extends Component {
     })
    }
 
-   handleWin() {
-       if(this.state.currentGuess === this.state.gameNum) {
-           this.setState({currentFeedback: this.state.feedback[4]})}
-   }
+//    handleWin() {
+//        if(this.state.currentGuess === this.state.gameNum) {
+//            this.setState({currentFeedback: this.state.feedback[4]})}
+//    }
 
    handleChange(e) {
        this.setState({currentGuess: e.target.value})
